@@ -2,18 +2,41 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-   MyStatelesswidget()
+   MyStatefullWidget()
   );
 }
+class MyStatefullWidget extends StatefulWidget {
+  @override
+  _MyStatefullWidgetState createState() => _MyStatefullWidgetState();
+}
 
-class MyStatelesswidget extends StatelessWidget {
+class _MyStatefullWidgetState extends State<MyStatefullWidget> {
+
+  var myColor = Colors.blue;
+  
+  changeColor(){
+    setState(() {
+      myColor = Colors.green;
+    });
+    print(myColor);
+    
+    print(myColor);
+  }
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      color: Colors.blue,
+    return MaterialApp(
+    home: Container(
+      color: myColor,
       child: Center(
-        child: Text("Haloo from flutter", textDirection: TextDirection.ltr, style: TextStyle(fontSize:32.0, color: Colors.white))
-      ) // center
-    ); // container
+        child: RaisedButton(
+          child: Text("Click", textDirection: TextDirection.ltr),
+          onPressed: (){
+            print("Hi from mystatefullwidget");
+            changeColor();
+          },
+         ),
+        ),
+        ),
+    );
   }
 }
