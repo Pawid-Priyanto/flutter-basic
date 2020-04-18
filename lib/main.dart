@@ -12,31 +12,24 @@ class MyStatefullWidget extends StatefulWidget {
 
 class _MyStatefullWidgetState extends State<MyStatefullWidget> {
 
-  var myColor = Colors.blue;
+ 
   
-  changeColor(){
-    setState(() {
-      myColor = Colors.green;
-    });
-    print(myColor);
-    
-    print(myColor);
-  }
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-    home: Container(
-      color: myColor,
-      child: Center(
-        child: RaisedButton(
-          child: Text("Click", textDirection: TextDirection.ltr),
-          onPressed: (){
-            print("Hi from mystatefullwidget");
-            changeColor();
-          },
-         ),
-        ),
-        ),
+    return Column (
+      children: <Widget>[
+        Text("Column 1", textDirection: TextDirection.ltr),
+        Text("Column 2", textDirection: TextDirection.ltr),
+        Text("Column 3", textDirection: TextDirection.ltr),
+        Row(
+          textDirection: TextDirection.ltr,
+          children: <Widget>[
+           Text("Row 1", textDirection: TextDirection.ltr),
+           Text("Row 2", textDirection: TextDirection.ltr),
+           Text("Row 3", textDirection: TextDirection.ltr),
+            ],
+           )
+      ],
     );
   }
 }
