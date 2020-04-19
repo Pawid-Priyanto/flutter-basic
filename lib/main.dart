@@ -19,10 +19,11 @@ class _MyStatefullWidgetState extends State<MyStatefullWidget> {
     return Padding(
       padding: EdgeInsets.only(top: 150.0, left: 70.0, right: 60.0),
       child: Column (
+        mainAxisSize: MainAxisSize.min,
       children: <Widget>[
        Card( 
          child: Padding(
-           padding: EdgeInsets.all(25.0),
+           padding: EdgeInsets.all(20.0),
          child: Row(
            textDirection: TextDirection.ltr,
            children: <Widget>[
@@ -34,14 +35,19 @@ class _MyStatefullWidgetState extends State<MyStatefullWidget> {
           )
        ),
        Padding(
-         padding: EdgeInsets.only(top: 0.0),
+         padding: EdgeInsets.only(top: 8.0),
        child: Card( 
          child: Padding(
-           padding: EdgeInsets.all(25.0),
+           padding: EdgeInsets.all(40.0),
          child: Row(
            textDirection: TextDirection.ltr,
            children: <Widget>[
-             Text("Child 2 1", textDirection: TextDirection.ltr, ),
+            //  IconButton(
+            //    icon: Icon(Icons.person, textDirection: TextDirection.ltr,),
+            //    onPressed: (){
+            //      print("ini icon");
+            //     }
+            //    ),
              Text("Child 2 2", textDirection: TextDirection.ltr, ),
              Text("Child 2 3", textDirection: TextDirection.ltr, ),
            ],
