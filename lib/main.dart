@@ -34,7 +34,9 @@ class _MyStatefullWidgetState extends State<MyStatefullWidget> {
                  print("ini icon");
                 }
                ),
-             Text("Child 2", textDirection: TextDirection.ltr, ),
+               Expanded(
+                 child: Text("Child 2", textDirection: TextDirection.ltr,)),
+       
               IconButton(
                icon: Icon(Icons.person, textDirection: TextDirection.ltr,),
                onPressed: (){
@@ -49,7 +51,7 @@ class _MyStatefullWidgetState extends State<MyStatefullWidget> {
          padding: EdgeInsets.only(top: 8.0),
        child: Card( 
          child: Padding(
-           padding: EdgeInsets.all(40.0),
+           padding: EdgeInsets.all(20.0),
          child: Row(
            textDirection: TextDirection.ltr,
            children: <Widget>[
@@ -59,7 +61,9 @@ class _MyStatefullWidgetState extends State<MyStatefullWidget> {
                  print("ini icon");
                 }
                ),
-             Text("Child 2 2", textDirection: TextDirection.ltr, ),
+             Expanded(
+               child: Text("Child 2 2", textDirection: TextDirection.ltr, )),  
+             
               IconButton(
                icon: Icon(Icons.person, textDirection: TextDirection.ltr,),
                onPressed: (){
