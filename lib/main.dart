@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -74,7 +76,10 @@ class _MyStatefullWidgetState extends State<MyStatefullWidget> {
            )
           )
           )
-       )
+       ),
+       Image(
+         image: AssetImage("images/hilda.png"),
+         )
       ],
      )
     )
