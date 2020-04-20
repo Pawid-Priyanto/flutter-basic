@@ -5,7 +5,13 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     MaterialApp(
-      home:  MyStatefullWidget()
+      debugShowCheckedModeBanner: false,
+      home:  MyStatefullWidget(),
+      theme: ThemeData(
+        primaryColor: Colors.pink,
+        accentColor: Colors.lime,
+        brightness: Brightness.dark,
+      ),
     )
   );
 }
