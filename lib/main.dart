@@ -117,6 +117,12 @@ class _MyStatefullWidgetState extends State<MyStatefullWidget> {
           ],
           ),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed:() {
+          print("ini floating button");
+          }
+          ),
     );
   }
 }
