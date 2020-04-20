@@ -131,7 +131,19 @@ class _MyStatefullWidgetState extends State<MyStatefullWidget> {
           ),
           body: Column(
             children: <Widget>[
-              Text("Body", textDirection: TextDirection.ltr),
+             Padding(
+               padding: EdgeInsets.all(16.0),
+               child: TextField(
+                 decoration:  InputDecoration(
+                   icon: Icon(Icons.person),
+                   hintText: "Username"
+                 ),
+                 onChanged: (input){
+                   print(input);
+                 },
+               ),
+               
+               ),
             ]
           ),
     );
