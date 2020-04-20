@@ -129,6 +129,11 @@ class _MyStatefullWidgetState extends State<MyStatefullWidget> {
           print("ini floating button");
           }
           ),
+          body: Column(
+            children: <Widget>[
+              Text("Body", textDirection: TextDirection.ltr),
+            ]
+          ),
     );
   }
 }
