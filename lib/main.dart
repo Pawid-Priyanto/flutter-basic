@@ -25,7 +25,7 @@ class MyStatefullWidget extends StatefulWidget {
 class _MyStatefullWidgetState extends State<MyStatefullWidget> {
 
   bool checkInput = false;
-
+  int gender = 1;
   printData(String input){
     print(input);
   }
@@ -157,6 +157,28 @@ class _MyStatefullWidgetState extends State<MyStatefullWidget> {
                      checkInput = value;
                    });
                  }
+                ),
+                ButtonBar(
+                  children: <Widget>[
+                    Radio(
+                      value: 1,
+                      groupValue: gender,
+                      onChanged: (int value){
+                        setState(() {
+                          gender = value;
+                          print(gender);
+                        });
+                      }),
+                     Radio(
+                      value: 2,
+                      groupValue: gender,
+                      onChanged: (int value){
+                        setState(() {
+                          gender = value;
+                          print(gender);
+                        });
+                      }),    
+                  ]
                 )
             ]
           ),
