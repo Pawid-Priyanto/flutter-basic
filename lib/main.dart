@@ -16,13 +16,19 @@ void main() {
   );
 }
 class MyStatefullWidget extends StatefulWidget {
+  
+ 
   @override
   _MyStatefullWidgetState createState() => _MyStatefullWidgetState();
 }
 
 class _MyStatefullWidgetState extends State<MyStatefullWidget> {
 
- 
+  bool checkInput = false;
+
+  printData(String input){
+    print(input);
+  }
   
   @override
   Widget build(BuildContext context) {
@@ -126,7 +132,7 @@ class _MyStatefullWidgetState extends State<MyStatefullWidget> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed:() {
-          print("ini floating button");
+          // print("ini floating button");
           }
           ),
           body: Column(
@@ -142,8 +148,16 @@ class _MyStatefullWidgetState extends State<MyStatefullWidget> {
                    print(input);
                  },
                ),
-               
                ),
+               Checkbox(
+                 value: checkInput,
+                 onChanged: (bool value) {
+                   setState(() {
+                     print(value);
+                     checkInput = value;
+                   });
+                 }
+                )
             ]
           ),
     );
