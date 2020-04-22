@@ -20,7 +20,7 @@ class MyStatefullWidget extends StatefulWidget {
 }
 
 class _MyStatefullWidgetState extends State<MyStatefullWidget> {
-
+  String input = "";
   List list = List();
   
   @override
@@ -48,7 +48,32 @@ class _MyStatefullWidgetState extends State<MyStatefullWidget> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed:() {
-          print("ini floating button");
+          showDialog(
+            context: context,
+            builder: (BuildContext context){
+              return  AlertDialog(
+                title: Text("Add todo"),
+                content: TextField(
+                  onChanged: (String value){
+                    input = value;
+                  },
+                ),
+                  actions: <Widget>[
+                    FlatButton(
+                      child: Text("Add"),
+                      onPressed: (){
+                        setState(() {
+                          list.add(input);
+                        });
+                     Navigator.of(context).pop();
+
+                      }
+
+                      ),
+                  ],
+              );
+              },
+            );
           }
           ),
           body: ListView.builder(
