@@ -80,10 +80,15 @@ class _MyStatefullWidgetState extends State<MyStatefullWidget> {
             itemCount: list.length,
             itemBuilder: (BuildContext context, int index){
               return Dismissible(
-               key: Key(index.toString()),
+               key: Key(list[index]),
                child: ListTile(
                  title: Text(list[index])
                ),
+               onDismissed: (direction){
+                 setState(() {
+                   list.removeAt(index);
+                 });
+               },
              );
             },
           )
